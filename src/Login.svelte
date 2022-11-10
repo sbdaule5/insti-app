@@ -8,7 +8,7 @@
 	<div class="close-btn">X</div>
 	<div class="logo-box">
 		<div class="logo">
-			<img src="./favicon.png" alt="logo">
+			<img src="./vite.svg" alt="logo">
 		</div>
 	</div>
 	<div class="login-btn-box">

@@ -8,7 +8,7 @@ app.use(session({
 	saveUninitialized: true,
 	secret: 'SECRET'
 }));
-
+app.use(express.json());
 
 // My modules
 const auth = require('./api/auth/google.cjs');
