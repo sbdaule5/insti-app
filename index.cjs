@@ -16,6 +16,9 @@ auth.init(app);
 const UserController = require('./controller/user.controller.cjs');
 UserController.init(auth.getUserProfile);
 app.use('/api/user', UserController.router);
+
+const ContactController = require('./controller/contact.controller.cjs');
+app.use('/api/contacts', ContactController.router);
 /*const mongo = require('./api/mongodb/db.cjs');
 mongo.init(app, dbConnected);
 var db = null;

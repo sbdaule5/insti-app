@@ -2,27 +2,31 @@
 	function loginBtn(){
 		window.location.replace('http://localhost:3000/api/auth/google');
 	}
+	function hideLoginBox(){
+		showLoginBox = false;
+	}
+	export let showLoginBox;
 </script>
 
-<div class="container">
-	<div class="close-btn">X</div>
-	<div class="logo-box">
-		<div class="logo">
-			<img src="./vite.svg" alt="logo">
+	<div class="container">
+		<div class="close-btn" on:click={hideLoginBox}>X</div>
+		<div class="logo-box">
+			<div class="logo">
+				<img src="./vite.svg" alt="logo">
+			</div>
+		</div>
+		<div class="login-btn-box">
+			<button class="login-btn" on:click={loginBtn}>Login with Google</button>
+		</div>
+		<div class="tandc-container">
+			<div class="checkbox">
+				<input class="check" type="checkbox"/>
+			</div>
+			<div class="permission-text">
+				<label>I agree to share Personal Data</label>
+			</div>
 		</div>
 	</div>
-	<div class="login-btn-box">
-		<button class="login-btn" on:click={loginBtn}>Login with Google</button>
-	</div>
-	<div class="tandc-container">
-		<div class="checkbox">
-			<input class="check" type="checkbox"/>
-		</div>
-		<div class="permission-text">
-			<label>I agree to share Personal Data</label>
-		</div>
-	</div>
-</div>
 
 <style>
 	.container{
@@ -34,6 +38,7 @@
 		background-color: #111166;
 		border-radius: 1.5vw;
 		padding: 0.5vw;
+		z-index: 6;
 	}
 	.close-btn{
 		position: absolute;
@@ -65,7 +70,7 @@
 		border-radius: 4px;
 	}
 	/*.login-btn-box button:hover{
-		box-shadow: 2px 2px white;
+	  box-shadow: 2px 2px white;
 	}*/
 	.logo img{
 		height: 6vw;

@@ -98,7 +98,6 @@ img{
     height:90%;
     font-family: "Lucida Console", "Courier New", monospace;
     align-items:center;
-
 }
 p{
     padding:0.7em;

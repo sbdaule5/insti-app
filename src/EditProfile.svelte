@@ -13,14 +13,11 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProfile) 
         });
-		window.location.replace('http://localhost:8080/dashboard/profile');
+        window.location.assign('http://localhost:8080/dashboard/profile');
     }       
 </script>
 
 {#await profilePromise then profile}
-    {#if (newProfile.name == "")}
-        newProfile = JSON.parse(JSON.stringify(profile))
-    {/if}
     <div class="container">
         <h1>Edit Profile</h1>
         <div class="row">
@@ -28,7 +25,7 @@
                 <label>Name</label>
             </div>
             <div class="fill">
-                <input type="text" id="fname" name="FirstName" placeholder="Your name..." bind:value={newProfile.name}>
+                <input type="text" class="input" placeholder="Your name..." bind:value={newProfile.name}>
             </div>
         </div>
         <div class="row">
@@ -36,7 +33,7 @@
                 <label>Branch Name</label>
             </div>
             <div class="fill">
-                <input type="text" id="bname" name="BranchName" placeholder="Your Branch name..." bind:value={newProfile.branch}>
+                <input type="text" class="input" placeholder="Your Branch name..." bind:value={newProfile.branch}>
             </div>
         </div>
         <div class="row">
@@ -44,7 +41,7 @@
                 <label>Degree</label>
             </div>
             <div class="fill">
-                <input type="text" id="dname" name="DegreeName" placeholder="Your Degree name..." bind:value={newProfile.degree}>
+                <input type="text" class="input" placeholder="Your Degree name..." bind:value={newProfile.degree}>
             </div>
         </div>
         <div class="row">
@@ -52,7 +49,7 @@
                 <label>Id No.</label>
             </div>
             <div class="fill">
-                <input type="number" id="idno" name="IdNo." placeholder="Your id no..." bind:value={newProfile.id}>
+                <input type="number" class="input" placeholder="Your id no..." bind:value={newProfile.id}>
             </div>
         </div>
         <div class="row">
@@ -60,7 +57,7 @@
                 <label>Contact</label>
             </div>
             <div class="fill">
-                <input type="text" id="con" name="Contactno" placeholder="Your contact no..." bind:value={newProfile.contact}>
+                <input type="text" class="input" placeholder="Your contact no..." bind:value={newProfile.contact}>
             </div>
         </div>
         <!-- <div class="row">
@@ -80,7 +77,7 @@
             </div>
             </div> -->
             <div class="button">
-                <button type="button" class="btn btn-outline-success" on:click={updateProfile}>Submit</button>
+                <button type="button" class="btn btn-outline-success success-btn" on:click={updateProfile}>Submit</button>
             </div>
     </div>
 {/await}
@@ -100,7 +97,7 @@
         margin:auto;
         color: white;
         font-size: 1em;
-        padding:10px;
+        padding:30px;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-transform: uppercase;
         border-radius: 10px;
@@ -116,24 +113,21 @@
     .row{
         width:100%;
     }
-    input{
+    .input{
         width:100%;
-        height:2em;
         border-radius:7px ;
-
     }
     .button{
         border-radius: 10px;
         text-align: center;
         padding:6px;
     }
-    button {
+    .success-btn{
         background-color: #4CAF50; /* Green */
         border: none;
         width:90px;
         height: 50px;
         color: white;
-        padding: 15px 32px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

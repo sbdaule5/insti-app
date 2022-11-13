@@ -22,8 +22,11 @@ var userSchema = new mongoose.Schema({
 	},
 	contact:{
 		type: String
+	},
+	//user type will be student by default, club for clubs
+	userType:{
+		type: String
 	}
-
 });
 
 mongoose.model("user", userSchema);
